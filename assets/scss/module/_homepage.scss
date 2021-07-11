@@ -484,7 +484,15 @@ header {
 
 .comment {
     background-color: $color-blue;
-    padding: 40px 0;
+    padding: 40px 0 0;
+
+
+    .container {
+        @include xs-sm-screens {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
 
     .title {
         display: flex;
@@ -512,7 +520,7 @@ header {
     }
 
     .wrapper {
-        padding: 20px 0;
+        padding: 20px 0 0;
 
         .form-wrapper {
             background-color: $color-primary;
@@ -524,9 +532,14 @@ header {
             background-position: right;
             margin-top: 30px;
 
+            @include xs-sm-screens {
+                border-radius: 0;
+            }
+
             h1 {
                 font-size: 22px;
                 margin-bottom: 24px;
+                color: $color-white;
             }
 
             .inputs {
@@ -597,28 +610,40 @@ header {
                 }
             }
 
-            .cta {
-                cursor: pointer;
-                padding: 20px 40px;
-                background: rgba(255, 255, 255, 0.60);
-                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-                backdrop-filter: blur(4.5px);
-                -webkit-backdrop-filter: blur(4.5px);
-                border-radius: 10px;
-                border: 1px solid rgba(255, 255, 255, 0.18);
-                transition: all 0.2s ease-in-out;
-                font-family: $Montserrat-Bold;
+            .btn-wrap {
+                display: flex;
+                justify-content: center;
 
-
-                &:hover {
-                    background: rgba(44, 62, 145, 0.85);
+                .cta {
+                    cursor: pointer;
+                    font-size: 18px;
+                    padding: 14px 80px;
+                    background: rgba(255, 255, 255, 0.60);
                     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
                     backdrop-filter: blur(4.5px);
                     -webkit-backdrop-filter: blur(4.5px);
                     border-radius: 10px;
                     border: 1px solid rgba(255, 255, 255, 0.18);
+                    transition: all 0.2s ease-in-out;
+                    font-family: $Montserrat-Bold;
+
+                    @include xs-sm-screens {
+                        padding: 12px 60px;
+                    }
+
+
+                    &:hover {
+                        background: rgba(44, 62, 145, 0.85);
+                        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                        backdrop-filter: blur(4.5px);
+                        -webkit-backdrop-filter: blur(4.5px);
+                        border-radius: 10px;
+                        border: 1px solid rgba(255, 255, 255, 0.18);
+                    }
                 }
+
             }
+
         }
 
 
@@ -626,6 +651,10 @@ header {
             border: 1px solid $color-primary;
             border-radius: 16px;
             padding: 10px;
+
+            @include xs-sm-screens {
+                border: none;
+            }
 
             .comment-list {
                 padding-left: 0;
@@ -637,12 +666,29 @@ header {
                     margin-bottom: 20px;
                     position: relative;
 
+                    @include xs-sm-screens {
+                        padding-bottom: 20px;
+                        margin-bottom: 30px;
+                        border-bottom: 2px solid #54619c;
+
+                        &:last-child {
+                            border-bottom: none;
+                            margin-bottom: 0;
+                            padding-bottom: 0;
+
+                        }
+                    }
+
                     .delete {
                         position: absolute;
                         top: 10px;
                         right: 0;
                         cursor: pointer;
                         transition: all 0.2s ease-in-out;
+
+                        @include xs-sm-screens {
+                            right: 10px;
+                        }
 
                         i {
                             font-size: 26px;

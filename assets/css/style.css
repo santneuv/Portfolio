@@ -884,7 +884,14 @@ header .header .logo {
 
 .comment {
   background-color: #2C3E91;
-  padding: 40px 0;
+  padding: 40px 0 0;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .comment .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .comment .title {
@@ -924,7 +931,7 @@ header .header .logo {
 }
 
 .comment .wrapper {
-  padding: 20px 0;
+  padding: 20px 0 0;
 }
 
 .comment .wrapper .form-wrapper {
@@ -938,9 +945,16 @@ header .header .logo {
   margin-top: 30px;
 }
 
+@media (min-width: 320px) and (max-width: 767px) {
+  .comment .wrapper .form-wrapper {
+    border-radius: 0;
+  }
+}
+
 .comment .wrapper .form-wrapper h1 {
   font-size: 22px;
   margin-bottom: 24px;
+  color: #ffffff;
 }
 
 .comment .wrapper .form-wrapper .inputs {
@@ -1047,9 +1061,19 @@ header .header .logo {
   font-family: "Montserrat-Bold";
 }
 
-.comment .wrapper .form-wrapper .cta {
+.comment .wrapper .form-wrapper .btn-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.comment .wrapper .form-wrapper .btn-wrap .cta {
   cursor: pointer;
-  padding: 20px 40px;
+  font-size: 18px;
+  padding: 14px 80px;
   background: rgba(255, 255, 255, 0.6);
   -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
           box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -1062,7 +1086,13 @@ header .header .logo {
   font-family: "Montserrat-Bold";
 }
 
-.comment .wrapper .form-wrapper .cta:hover {
+@media (min-width: 320px) and (max-width: 767px) {
+  .comment .wrapper .form-wrapper .btn-wrap .cta {
+    padding: 12px 60px;
+  }
+}
+
+.comment .wrapper .form-wrapper .btn-wrap .cta:hover {
   background: rgba(44, 62, 145, 0.85);
   -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
           box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -1078,6 +1108,12 @@ header .header .logo {
   padding: 10px;
 }
 
+@media (min-width: 320px) and (max-width: 767px) {
+  .comment .wrapper .comment-area {
+    border: none;
+  }
+}
+
 .comment .wrapper .comment-area .comment-list {
   padding-left: 0;
   list-style: none;
@@ -1090,6 +1126,19 @@ header .header .logo {
   position: relative;
 }
 
+@media (min-width: 320px) and (max-width: 767px) {
+  .comment .wrapper .comment-area .comment-list .comment-item {
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #54619c;
+  }
+  .comment .wrapper .comment-area .comment-list .comment-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
 .comment .wrapper .comment-area .comment-list .comment-item .delete {
   position: absolute;
   top: 10px;
@@ -1097,6 +1146,12 @@ header .header .logo {
   cursor: pointer;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .comment .wrapper .comment-area .comment-list .comment-item .delete {
+    right: 10px;
+  }
 }
 
 .comment .wrapper .comment-area .comment-list .comment-item .delete i {
